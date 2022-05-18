@@ -1,6 +1,6 @@
 
 let gameBoard= (function(){
-    let boardArray = [box1, box2, box3, box4, box5, box6, box7, box8, box9];
+    let boardArray = [box1=undefined, box2=undefined, box3=undefined, box4=undefined, box5=undefined, box6=undefined, box7=undefined, box8=undefined, box9=undefined];
     let alterBoard = function(boxname, newvalue){
         boxname=boxname-1;
         if(typeof(newvalue)=='string' && boxname<10 && typeof(boardArray[boxname]!='string')){
@@ -14,7 +14,7 @@ let gameBoard= (function(){
         boardArray,
         alterBoard
     }
-})(box1=undefined, box2=undefined, box3=undefined, box4=undefined, box5=undefined, box6=undefined, box7=undefined, box8=undefined, box9=undefined);
+})();
 
 
 let displayController = (function(){
@@ -43,15 +43,14 @@ let displayController = (function(){
     let evencount= 1;
     boardDiv.addEventListener('click', afterclicker);
     function afterclicker(e, restart=false){
-        console.log(evencount);
         if(restart==true){
             evencount=1;
             restart=false;
             return;
         }
         else if(evencount%2==1 && typeof(gameBoard.boardArray[e.target.id-1])!='string'){
-                gameBoard.alterBoard([e.target.id], 'x'); //x goes first
-                evencount++;   
+            gameBoard.alterBoard([e.target.id], 'x'); //x goes first
+            evencount++;   
         }
         else if(evencount%2==0 && typeof(gameBoard.boardArray[e.target.id-1])!='string'){
             gameBoard.alterBoard([e.target.id], 'o');
@@ -82,26 +81,25 @@ let displayController = (function(){
         let xname;
         let oname;
         let winname;
-        if(typeof(game.playerxVal)=='string'&& game.playerxVal.length>1){
-            xname= game.playerxVal;
-        }
-        else{
-            xname= 'X';
-        }
-        if(typeof(game.playeroVal)=='string'&& game.playerxVal.length>1){
-            oname= game.playeroVal;
-        }
-        else{
-            oname= 'O';
-        }
         function checkWinName(value){
             if(value=='X'){
+                if(typeof(game.playerxVal)=='string'&& game.playerxVal.length>1){
+                    xname= game.playerxVal;
+                }
+                else{
+                    xname= 'X';
+                }
                 winname= xname;
             }
             else{
+                if(typeof(game.playeroVal)=='string'&& game.playerxVal.length>1){
+                    oname= game.playeroVal;
+                }
+                else{
+                    oname= 'O';
+                }
                 winname= oname;
             }
-            console.log(xname+ ' ' +oname);
             congratbox.style.display='flex';
         }
         if(a[0]==a[1]&& a[0]==a[2] && typeof(a[0])=='string'){
@@ -174,8 +172,8 @@ let game = (function(){
     let playerxVal= document.getElementById('player1').value;
     let playeroVal= document.getElementById('player2').value; 
     //update name eventlisteners
-    playerx.addEventListener('change', ()=>{playerxVal = document.getElementById('player1').value; console.log(playerxVal)});
-    playero.addEventListener('change', ()=>{playeroVal = document.getElementById('player2').value; console.log(playeroVal)});
+    playerx.addEventListener('input', ()=>{game.playerxVal = document.getElementById('player1').value;});
+    playero.addEventListener('input', ()=>{game.playeroVal = document.getElementById('player2').value;});
 
     return{restart,
             playerxVal,
