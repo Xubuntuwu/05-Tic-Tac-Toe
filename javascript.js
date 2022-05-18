@@ -171,8 +171,8 @@ let game = (function(){
     let playerxVal= document.getElementById('player1').value;
     let playeroVal= document.getElementById('player2').value; 
     //update name eventlisteners
-    playerx.addEventListener('input', ()=>{game.playerxVal = document.getElementById('player1').value;}); //it seems like without the "game." part it only updates a local variable?
-    playero.addEventListener('input', ()=>{game.playeroVal = document.getElementById('player2').value;});
+    playerx.addEventListener('change', ()=>{game.playerxVal = document.getElementById('player1').value;}); //it seems like without the "game." part it only updates a local variable?
+    playero.addEventListener('change', ()=>{game.playeroVal = document.getElementById('player2').value;});
 
     return{restart,
             playerxVal,
