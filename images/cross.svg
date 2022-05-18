@@ -1,0 +1,28 @@
+<svg width="369" height="337" viewBox="0 0 369 337" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="../style.css" type="text/css"/> -->
+<line id="topleft" x1="20.8543" y1="7.71863" x2="361.854" y2="328.719" stroke-width="20"/>
+<line id="topright" x1="7.14563" y1="328.721" x2="348.143" y2="7.7187" stroke-width="20"/>
+<style rel="stylesheet" type="text/css">
+#topleft{
+    <!-- stroke: purple;
+    animation: dash 5s linear alternate forwards; -->
+    stroke: black;
+}
+#topright{
+    <!-- stroke: blueviolet;
+    animation: dash 5s linear alternate forwards; -->
+    stroke: black;
+}
+
+<!-- @keyframes dash {
+  from {
+    stroke-dasharray: 80;
+  }
+  to {
+    stroke-dasharray:500;
+  }
+} -->
+
+</style>
+
+</svg>
