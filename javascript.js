@@ -1,4 +1,3 @@
-
 let gameBoard= (function(){
     let boardArray = [box1=undefined, box2=undefined, box3=undefined, box4=undefined, box5=undefined, box6=undefined, box7=undefined, box8=undefined, box9=undefined];
     let alterBoard = function(boxname, newvalue){
@@ -172,7 +171,7 @@ let game = (function(){
     let playerxVal= document.getElementById('player1').value;
     let playeroVal= document.getElementById('player2').value; 
     //update name eventlisteners
-    playerx.addEventListener('input', ()=>{game.playerxVal = document.getElementById('player1').value;});
+    playerx.addEventListener('input', ()=>{game.playerxVal = document.getElementById('player1').value;}); //it seems like without the "game." part it only updates a local variable?
     playero.addEventListener('input', ()=>{game.playeroVal = document.getElementById('player2').value;});
 
     return{restart,

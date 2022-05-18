@@ -11,6 +11,9 @@ html, body, #container{
     justify-content: center;
     align-items: center;
 }
+#container{
+    background: linear-gradient(90deg, rgba(89,255,202,1) 0%, rgba(156,146,255,1) 50%, rgba(0,212,255,1) 100%);
+}
 
 #centerdiv{
     display: flex;
@@ -62,6 +65,7 @@ html, body, #container{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
     gap: 10px;
     padding: 0;
 }
