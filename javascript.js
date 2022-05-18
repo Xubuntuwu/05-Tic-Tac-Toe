@@ -82,13 +82,13 @@ let displayController = (function(){
         let xname;
         let oname;
         let winname;
-        if(typeof(game.playerxVal)=='string'){
+        if(typeof(game.playerxVal)=='string'&& game.playerxVal.length>1){
             xname= game.playerxVal;
         }
         else{
             xname= 'X';
         }
-        if(typeof(game.playeroVal)=='string'){
+        if(typeof(game.playeroVal)=='string'&& game.playerxVal.length>1){
             oname= game.playeroVal;
         }
         else{
@@ -101,6 +101,7 @@ let displayController = (function(){
             else{
                 winname= oname;
             }
+            console.log(xname+ ' ' +oname);
             congratbox.style.display='flex';
         }
         if(a[0]==a[1]&& a[0]==a[2] && typeof(a[0])=='string'){
@@ -173,8 +174,8 @@ let game = (function(){
     let playerxVal= document.getElementById('player1').value;
     let playeroVal= document.getElementById('player2').value; 
     //update name eventlisteners
-    playerx.addEventListener('input', ()=>{playerxVal = document.getElementById('player1').value; console.log(playerxVal)});
-    playero.addEventListener('input', ()=>{playeroVal = document.getElementById('player2').value; console.log(playeroVal)});
+    playerx.addEventListener('change', ()=>{playerxVal = document.getElementById('player1').value; console.log(playerxVal)});
+    playero.addEventListener('change', ()=>{playeroVal = document.getElementById('player2').value; console.log(playeroVal)});
 
     return{restart,
             playerxVal,
